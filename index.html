@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMAN 1 RANTAU KOPAR | Portal Resmi Sekolah</title>
+  <meta name="description"
+    content="Website Resmi SMAN 1 Rantau Kopar, Rokan Hilir, Riau. Informasi profil, sejarah, jumlah siswa, dewan guru, fasilitas, dan kegiatan sekolah.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f4c81'><path d='M12 3L1 9l11 6 9-4.91V17h2V9L12 3z'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f0f5fa',
+              100: '#e1ecf5',
+              600: '#155e99',
+              700: '#0f4c81',
+              800: '#0c3860',
+              900: '#082540'
+            },
+            accent: {
+              gold: '#f59e0b',
+              teal: '#0d9488'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-navy-700 selection:text-white">
+
+  <!-- Top Info Bar -->
+  <div class="bg-navy-900 text-slate-300 text-xs py-2 px-4 border-b border-navy-800 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <span><i class="fa-solid fa-school-flag text-amber-400 mr-2"></i>NPSN: <strong>10493782</strong></span>
+        <span><i class="fa-solid fa-award text-amber-400 mr-2"></i>Akreditasi: <strong>B (BAN-SM)</strong></span>
+        <span><i class="fa-solid fa-book-open text-teal-400 mr-2"></i>Kurikulum: <strong>Kurikulum
+            Merdeka</strong></span>
+      </div>
+      <div class="flex items-center space-x-5">
+        <a href="mailto:smansa.kopar@gmail.com" class="hover:text-white transition"><i
+            class="fa-solid fa-envelope mr-1.5 text-amber-400"></i>smansa.kopar@gmail.com</a>
+        <a href="tel:081371167009" class="hover:text-white transition"><i
+            class="fa-solid fa-phone mr-1.5 text-teal-400"></i>0813-7116-7009</a>
+        <span
+          class="bg-emerald-600/30 text-emerald-400 px-2 py-0.5 rounded text-[11px] font-semibold border border-emerald-500/30">Terverifikasi
+          Kemendikdasmen</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <!-- School Logo & Branding -->
+        <a href="#beranda" class="flex items-center space-x-3 group">
+          <div
+            class="w-12 h-12 rounded-xl bg-gradient-to-tr from-navy-800 to-navy-600 flex items-center justify-center text-white shadow-md shadow-navy-700/20 group-hover:scale-105 transition">
+            <i class="fa-solid fa-graduation-cap text-2xl text-amber-400"></i>
+          </div>
+          <div>
+            <h1
+              class="text-xl font-bold tracking-tight text-navy-900 group-hover:text-navy-700 transition leading-tight">
+              SMAN 1 RANTAU KOPAR
+            </h1>
+            <p class="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+              <span>Kab. Rokan Hilir</span>
+              <span>•</span>
+              <span class="text-navy-700 font-semibold">Prov. Riau</span>
+            </p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+          <a href="#beranda" class="hover:text-navy-700 transition">Beranda</a>
+          <a href="#profil" class="hover:text-navy-700 transition">Profil</a>
+          <a href="#sejarah" class="hover:text-navy-700 transition">Sejarah</a>
+          <a href="#siswa" class="hover:text-navy-700 transition">Data Siswa</a>
+          <a href="#guru" class="hover:text-navy-700 transition">Guru & PTK</a>
+          <a href="#fasilitas" class="hover:text-navy-700 transition">Fasilitas</a>
+          <a href="#berita" class="hover:text-navy-700 transition">Berita</a>
+          <a href="#kontak" class="hover:text-navy-700 transition">Kontak</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <a href="#kontak"
+            class="inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-bold bg-navy-700 hover:bg-navy-800 text-white shadow-md shadow-navy-700/25 transition">
+            <i class="fa-solid fa-paper-plane mr-2 text-amber-400"></i> Hubungi Kami
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobile-menu-btn"
+            class="p-2 rounded-lg text-slate-600 hover:text-navy-800 hover:bg-slate-100 focus:outline-none"
+            aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 shadow-lg">
+      <div class="flex flex-col space-y-3 font-semibold text-slate-600">
+        <a href="#beranda" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Beranda</a>
+        <a href="#profil" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Profil Sekolah</a>
+        <a href="#sejarah" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Sejarah & Legalitas</a>
+        <a href="#siswa" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Jumlah Siswa</a>
+        <a href="#guru" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Dewan Guru & PTK</a>
+        <a href="#fasilitas" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Sarana & Prasarana</a>
+        <a href="#berita" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Berita & Prestasi</a>
+        <a href="#kontak" class="px-3 py-2 rounded-md hover:bg-slate-100 hover:text-navy-700">Kontak & Lokasi</a>
+        <div class="pt-2">
+          <a href="#kontak"
+            class="w-full text-center block px-4 py-2.5 rounded-lg text-sm font-bold bg-navy-700 text-white shadow">
+            Hubungi Sekolah
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="relative hero-gradient text-white pt-24 pb-32 overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent opacity-90"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-3xl">
+        <!-- Official Badges -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/30">
+            <i class="fa-solid fa-award mr-1.5"></i> Akreditasi B (BAN-SM)
+          </span>
+          <span
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/20 text-teal-300 border border-teal-400/30">
+            <i class="fa-solid fa-certificate mr-1.5"></i> NPSN: 10493782
+          </span>
+          <span
+            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-400/30">
+            <i class="fa-solid fa-compass mr-1.5"></i> Kurikulum Merdeka
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6">
+          Membangun Insan Unggul, Berkarakter & Berprestasi
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal mb-8">
+          Selamat datang di website resmi <strong>SMAN 1 Rantau Kopar</strong>, institusi pendidikan negeri di Kabupaten
+          Rokan Hilir yang berkomitmen mendidik generasi penerus bangsa berlandaskan Profil Pelajar Pancasila dan
+          literasi teknologi modern.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#profil"
+            class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold shadow-lg shadow-amber-500/25 transition flex items-center">
+            Jelajahi Profil Sekolah <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+          </a>
+          <a href="#siswa"
+            class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold backdrop-blur border border-white/20 transition flex items-center">
+            <i class="fa-solid fa-chart-pie mr-2 text-teal-400"></i> Statistik & Siswa
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 inset-x-0 leading-none">
+      <svg class="w-full h-12 text-slate-50 fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Quick Key Metrics Bar (Floating) -->
+  <section class="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+      <!-- Metric 1: Total Siswa -->
+      <div class="stat-box p-6 flex items-center space-x-4">
+        <div
+          class="w-14 h-14 rounded-2xl bg-blue-50 text-navy-700 flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-navy-900 flex items-baseline">
+            <span class="counter-val" data-target="254">0</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Total Siswa Aktif</p>
+        </div>
+      </div>
+
+      <!-- Metric 2: Guru Berpengalaman -->
+      <div class="stat-box p-6 flex items-center space-x-4">
+        <div
+          class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-navy-900 flex items-baseline">
+            <span class="counter-val" data-target="17">0</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Dewan Guru (94% Sertifikasi)
+          </p>
+        </div>
+      </div>
+
+      <!-- Metric 3: Rombel -->
+      <div class="stat-box p-6 flex items-center space-x-4">
+        <div
+          class="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-solid fa-door-open"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-navy-900 flex items-baseline">
+            <span class="counter-val" data-target="9">0</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Rombel (Kelas X, XI, XII)</p>
+        </div>
+      </div>
+
+      <!-- Metric 4: Luas Tanah Kampus -->
+      <div class="stat-box p-6 flex items-center space-x-4">
+        <div
+          class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl flex-shrink-0">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-extrabold text-navy-900 flex items-baseline">
+            <span>19.849</span><span class="text-lg font-bold text-slate-500 ml-1">m²</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Luas Lahan Milik Sendiri</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sambutan Kepala Sekolah & Profil Utama -->
+  <section id="profil" class="py-12 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-navy-700 tracking-widest uppercase bg-navy-50 px-3.5 py-1.5 rounded-full border border-navy-100">
+          Profil & Identitas Sekolah
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Mengenal SMAN 1 Rantau Kopar
+        </h2>
+        <div class="w-16 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Informasi komprehensif mengenai visi, identitas kelembagaan, serta fasilitas resmi satuan pendidikan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Left: Sambutan Kepala Sekolah -->
+        <div
+          class="lg:col-span-5 bg-gradient-to-b from-slate-50 to-slate-100 p-8 rounded-3xl border border-slate-200 relative shadow-sm">
+          <div class="flex items-center space-x-4 mb-6">
+            <div
+              class="w-20 h-20 rounded-2xl bg-navy-800 text-white flex items-center justify-center text-3xl shadow-md border-2 border-amber-400">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-navy-900">SLAMET GINANJAR S.Pd</h3>
+              <p class="text-sm font-semibold text-navy-700">Kepala Sekolah SMAN 1 Rantau Kopar</p>
+              <span class="inline-block mt-1 text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">
+                Golongan IV/a • Pengalaman >24 Tahun
+              </span>
+            </div>
+          </div>
+          <blockquote class="italic text-slate-700 text-sm leading-relaxed border-l-4 border-navy-700 pl-4 my-4">
+            "Pendidikan bukan sekadar transfer ilmu, melainkan pembentukan karakter, penempaan integritas, dan persiapan
+            kecakapan hidup. Di era keterbukaan informasi dan teknologi, SMAN 1 Rantau Kopar senantiasa membimbing para
+            siswa untuk terus berinovasi, berakhlak mulia, serta siap menembus gerbang perguruan tinggi favorit."
+          </blockquote>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+            <span>Dusun III Rantau Panjang</span>
+            <span class="font-semibold text-navy-800">SMAN 1 Rantau Kopar</span>
+          </div>
+        </div>
+
+        <!-- Right: Deskripsi & Rincian Identitas Sekolah -->
+        <div class="lg:col-span-7">
+          <h3 class="text-2xl font-bold text-navy-900 mb-4">
+            Komitmen Pendidikan Berkualitas di Rokan Hilir
+          </h3>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            <strong>SMAN 1 Rantau Kopar</strong> adalah sekolah menengah atas berstatus negeri yang berlokasi strategis
+            di Jalan Lintas Sekapas - Rantau Kopar, Kecamatan Rantau Kopar, Kabupaten Rokan Hilir, Provinsi Riau.
+            Sekolah ini berdiri di atas lahan milik sendiri seluas <strong>19.849 m²</strong> dengan lingkungan yang
+            asri, tenang, dan sangat kondusif untuk kegiatan belajar mengajar.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Sekolah ini menyelenggarakan pembelajaran sistem <strong>Sehari Penuh (5 Hari Sekolah)</strong> dengan
+            menerapkan <strong>Kurikulum Merdeka</strong> yang memberikan keleluasaan bagi pendidik untuk menciptakan
+            pembelajaran berkualitas yang sesuai dengan kebutuhan dan lingkungan belajar peserta didik.
+          </p>
+
+          <!-- Identitas Spesifik Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mt-6">
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <span class="text-xs text-slate-500 font-semibold uppercase block">NPSN Resmi</span>
+              <span class="text-base font-bold text-navy-900">10493782</span>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <span class="text-xs text-slate-500 font-semibold uppercase block">Bentuk Pendidikan & Status</span>
+              <span class="text-base font-bold text-navy-900">SMA / NEGERI</span>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <span class="text-xs text-slate-500 font-semibold uppercase block">Daya Listrik & Sumber</span>
+              <span class="text-base font-bold text-navy-900">10.600 VA (PLN)</span>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <span class="text-xs text-slate-500 font-semibold uppercase block">Akses Internet</span>
+              <span class="text-base font-bold text-navy-900">Broadband & Jaringan Seluler</span>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <span class="text-xs text-slate-500 font-semibold uppercase block">Waktu Penyelenggaraan</span>
+              <span class="text-base font-bold text-navy-900">Sehari Penuh / 5 Hari</span>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <span class="text-xs text-slate-500 font-semibold uppercase block">Semester / Tahun Ajaran</span>
+              <span class="text-base font-bold text-navy-900">2026/2027 Gasal</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sejarah & Riwayat Sekolah (History Timeline) -->
+  <section id="sejarah" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-amber-700 tracking-widest uppercase bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
+          Riwayat & Legalitas
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Sejarah Perkembangan Sekolah
+        </h2>
+        <div class="w-16 h-1 bg-navy-700 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Perjalanan SMAN 1 Rantau Kopar dalam mencerdaskan generasi muda di kawasan Rantau Kopar sejak didirikan tahun
+          2004 hingga kini.
+        </p>
+      </div>
+
+      <!-- History Interactive Card & Timeline -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left Column: Legalitas & SK -->
+        <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-700 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-stamp"></i>
+          </div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Legalitas & Dokumen Operasional</h3>
+          <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+            SMAN 1 Rantau Kopar beroperasi secara legal berdasarkan keputusan resmi Dinas Pendidikan dan Pemerintah
+            Daerah.
+          </p>
+
+          <div class="space-y-4 text-sm">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <span class="text-xs font-bold text-slate-500 uppercase block">SK Izin Operasional</span>
+              <span class="font-extrabold text-navy-900 text-base">421/TU/2004/2787</span>
+              <p class="text-xs text-slate-500 mt-1">
+                <i class="fa-regular fa-calendar-check mr-1 text-teal-600"></i> Tanggal Penetapan: <strong>11 November
+                  2004</strong>
+              </p>
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <span class="text-xs font-bold text-slate-500 uppercase block">SK Penetapan Akreditasi Terkini</span>
+              <span class="font-extrabold text-navy-900 text-base">1857/BAN-SM/SK/2022</span>
+              <div class="flex items-center justify-between mt-2 text-xs text-slate-600">
+                <span>Nilai Akhir: <strong class="text-navy-900 text-sm">88 (B)</strong></span>
+                <span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Berlaku s.d 18 Nov
+                  2027</span>
+              </div>
+            </div>
+
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+              <span class="text-xs font-bold text-slate-500 uppercase block">Riwayat Akreditasi Sebelumnya</span>
+              <span class="font-medium text-slate-800 text-sm">SK No. 193/BAP-SM/KP-09/XI/2017</span>
+              <p class="text-xs text-slate-500 mt-1">Ditetapkan pada 17 November 2017 dengan Peringkat B (Nilai 88).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Timeline Perjalanan -->
+        <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm relative">
+
+          <h3 class="text-xl font-bold text-navy-900 mb-6 flex items-center">
+            <i class="fa-solid fa-clock-rotate-left mr-2.5 text-amber-500"></i> Linimasa Perjalanan Sekolah
+          </h3>
+
+          <div
+            class="relative pl-6 space-y-8 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-slate-200">
+
+            <!-- Step 1: 2004 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-navy-700 border-4 border-white shadow"></span>
+              <span class="inline-block px-2.5 py-0.5 rounded text-xs font-bold bg-navy-100 text-navy-800 mb-1">
+                Tahun 2004
+              </span>
+              <h4 class="text-base font-bold text-navy-900">Kelahiran SMAN 1 Rantau Kopar</h4>
+              <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                Menjawab aspirasi masyarakat Kecamatan Rantau Kopar akan hadirnya sekolah menengah atas negeri
+                berkualitas, SMAN 1 Rantau Kopar resmi didirikan berdasarkan SK No. 421/TU/2004/2787 tertanggal 11
+                November 2004 di Dusun III Rantau Panjang.
+              </p>
+            </div>
+
+            <!-- Step 2: 2017 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-teal-600 border-4 border-white shadow"></span>
+              <span class="inline-block px-2.5 py-0.5 rounded text-xs font-bold bg-teal-100 text-teal-800 mb-1">
+                Tahun 2017
+              </span>
+              <h4 class="text-base font-bold text-navy-900">Pengakuan Akreditasi Peringkat B</h4>
+              <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                Sekolah berhasil meraih Akreditasi B dengan nilai memuaskan 88 dari Badan Akreditasi Provinsi
+                Sekolah/Madrasah (BAP-SM) Riau melalui SK No. 193/BAP-SM/KP-09/XI/2017.
+              </p>
+            </div>
+
+            <!-- Step 3: 2022 -->
+            <div class="relative pl-6">
+              <span
+                class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-amber-500 border-4 border-white shadow"></span>
+              <span class="inline-block px-2.5 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-800 mb-1">
+                Tahun 2022
+              </span>
+              <h4 class="text-base font-bold text-navy-900">Perpanjangan & Pengukuhan Akreditasi Nasional</h4>
+              <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                Badan Akreditasi Nasional Sekolah/Madrasah (BAN-SM) menerbitkan SK No. 1857/BAN-SM/SK/2022 yang
+                mengukuhkan kembali akreditasi B SMAN 1 Rantau Kopar hingga 18 November 2027.
+              </p>
+            </div>
+
+            <!-- Step 4: 2024 - Sekarang -->
+            <div class="relative pl-6">
+              <span
+                class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-emerald-600 border-4 border-white shadow"></span>
+              <span class="inline-block px-2.5 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-800 mb-1">
+                Era Kurikulum Merdeka & Digitalisasi
+              </span>
+              <h4 class="text-base font-bold text-navy-900">Transformasi Pembelajaran Berkelanjutan</h4>
+              <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                Implementasi penuh Kurikulum SMA Merdeka, penguatan pembelajaran berbasis TIK dan kecerdasan artifisial
+                (AI), serta capaian prestasi siswa menembus perguruan tinggi negeri seperti Universitas Riau melalui
+                jalur SNBP.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Data Statistik & Jumlah Siswa (Interactive Charts) -->
+  <section id="siswa" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-teal-700 tracking-widest uppercase bg-teal-50 px-3.5 py-1.5 rounded-full border border-teal-200">
+          Data Dapodik Terbaru
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Statistik & Jumlah Peserta Didik
+        </h2>
+        <div class="w-16 h-1 bg-teal-600 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Total <strong>254 Siswa</strong> terbagi ke dalam 9 Rombongan Belajar dengan sebaran gender yang seimbang.
+        </p>
+      </div>
+
+      <!-- Highlights cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+        <!-- Total Card -->
+        <div class="p-6 rounded-2xl bg-gradient-to-tr from-navy-800 to-navy-700 text-white shadow-md">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-xs uppercase font-semibold text-slate-300">Total Peserta Didik</p>
+              <h3 class="text-4xl font-extrabold mt-1">254 <span class="text-lg font-medium text-slate-300">Siswa</span>
+              </h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl text-amber-400">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex justify-between text-xs text-slate-200">
+            <span>9 Rombongan Belajar</span>
+            <span>Rata-rata 29 siswa/rombel</span>
+          </div>
+        </div>
+
+        <!-- Laki-laki Card -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-xs uppercase font-semibold text-slate-500">Siswa Laki-Laki</p>
+              <h3 class="text-4xl font-extrabold text-navy-900 mt-1">128 <span
+                  class="text-lg font-medium text-slate-500">Siswa</span></h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-xl text-navy-700">
+              <i class="fa-solid fa-mars"></i>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-200 flex justify-between text-xs text-slate-500">
+            <span>Proporsi: <strong>50.4%</strong></span>
+            <span class="text-navy-700 font-semibold">Tercatat di Dapodik</span>
+          </div>
+        </div>
+
+        <!-- Perempuan Card -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-xs uppercase font-semibold text-slate-500">Siswa Perempuan</p>
+              <h3 class="text-4xl font-extrabold text-amber-600 mt-1">126 <span
+                  class="text-lg font-medium text-slate-500">Siswi</span></h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-xl text-amber-600">
+              <i class="fa-solid fa-venus"></i>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-200 flex justify-between text-xs text-slate-500">
+            <span>Proporsi: <strong>49.6%</strong></span>
+            <span class="text-amber-700 font-semibold">Tercatat di Dapodik</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts & Detailed Breakdown Table -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Bar Chart: Siswa per Jenjang -->
+        <div class="lg:col-span-8 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-200 mb-6 gap-2">
+            <div>
+              <h3 class="text-lg font-bold text-navy-900">Distribusi Siswa per Jenjang Kelas</h3>
+              <p class="text-xs text-slate-500">Perbandingan jumlah siswa Laki-Laki dan Perempuan tiap tingkat</p>
+            </div>
+            <span
+              class="text-xs font-semibold bg-white px-3 py-1 rounded-full border border-slate-300 text-slate-700 self-start">
+              Semester 20261
+            </span>
+          </div>
+
+          <div class="relative h-72 sm:h-80 w-full">
+            <canvas id="siswaClassChart"></canvas>
+          </div>
+
+          <!-- Rincian Tabel Data -->
+          <div class="overflow-x-auto mt-6">
+            <table class="w-full text-left text-sm text-slate-600 border border-slate-200 rounded-xl overflow-hidden">
+              <thead class="bg-slate-200/60 text-navy-900 text-xs uppercase font-bold">
+                <tr>
+                  <th class="p-3">Tingkat Kelas</th>
+                  <th class="p-3 text-center">Laki-Laki</th>
+                  <th class="p-3 text-center">Perempuan</th>
+                  <th class="p-3 text-center">Total Siswa</th>
+                  <th class="p-3 text-center">Jumlah Rombel</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="p-3 font-semibold text-slate-900">Kelas 10 (Fase E)</td>
+                  <td class="p-3 text-center font-medium text-navy-700">44</td>
+                  <td class="p-3 text-center font-medium text-amber-600">51</td>
+                  <td class="p-3 text-center font-bold text-slate-900">95</td>
+                  <td class="p-3 text-center">3 Rombel</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="p-3 font-semibold text-slate-900">Kelas 11 (Fase F)</td>
+                  <td class="p-3 text-center font-medium text-navy-700">42</td>
+                  <td class="p-3 text-center font-medium text-amber-600">40</td>
+                  <td class="p-3 text-center font-bold text-slate-900">82</td>
+                  <td class="p-3 text-center">3 Rombel</td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition">
+                  <td class="p-3 font-semibold text-slate-900">Kelas 12</td>
+                  <td class="p-3 text-center font-medium text-navy-700">42</td>
+                  <td class="p-3 text-center font-medium text-amber-600">35</td>
+                  <td class="p-3 text-center font-bold text-slate-900">77</td>
+                  <td class="p-3 text-center">3 Rombel</td>
+                </tr>
+                <tr class="bg-navy-50/50 font-bold text-navy-950">
+                  <td class="p-3">Total Keseluruhan</td>
+                  <td class="p-3 text-center text-navy-700">128</td>
+                  <td class="p-3 text-center text-amber-600">126</td>
+                  <td class="p-3 text-center text-navy-900 text-base">254</td>
+                  <td class="p-3 text-center">9 Rombel</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Doughnut Chart: Gender Ratio & Key Indicators -->
+        <div class="lg:col-span-4 space-y-6">
+
+          <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-navy-900 mb-1">Rasio Komposisi Gender</h3>
+            <p class="text-xs text-slate-500 mb-4">Keseimbangan gender peserta didik</p>
+            <div class="relative h-56 w-full flex items-center justify-center">
+              <canvas id="genderChart"></canvas>
+            </div>
+            <div class="mt-4 flex justify-around text-center text-xs">
+              <div>
+                <span class="inline-block w-3 h-3 rounded-full bg-navy-700 mr-1"></span>
+                <span class="font-bold text-navy-900">128 Laki-Laki</span>
+              </div>
+              <div>
+                <span class="inline-block w-3 h-3 rounded-full bg-amber-500 mr-1"></span>
+                <span class="font-bold text-amber-600">126 Perempuan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Indikator Efektivitas Belajar -->
+          <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-navy-900 mb-3">Indikator Efektivitas</h3>
+            <div class="space-y-3 text-xs">
+              <div class="flex justify-between items-center p-3 bg-white rounded-xl border border-slate-200">
+                <span class="text-slate-600 font-medium">Rasio Siswa terhadap Guru</span>
+                <span class="font-extrabold text-navy-900 text-sm">15 : 1</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-white rounded-xl border border-slate-200">
+                <span class="text-slate-600 font-medium">Rata-rata Siswa per Rombel</span>
+                <span class="font-extrabold text-navy-900 text-sm">28.2 Siswa</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-white rounded-xl border border-slate-200">
+                <span class="text-slate-600 font-medium">Kecukupan Ruang Kelas</span>
+                <span class="font-extrabold text-emerald-700 text-sm">100% Layak</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Data Guru & Tenaga Kependidikan (PTK) -->
+  <section id="guru" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-navy-700 tracking-widest uppercase bg-navy-100 px-3.5 py-1.5 rounded-full border border-navy-200">
+          Pendidik Profesional
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Dewan Guru & Tenaga Kependidikan
+        </h2>
+        <div class="w-16 h-1 bg-navy-700 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Didukung oleh <strong>17 Guru</strong> berkualifikasi sarjana dan magister dengan tingkat sertifikasi pendidik
+          mencapai <strong>94.12%</strong>.
+        </p>
+      </div>
+
+      <!-- Kualifikasi Statistik PTK -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div
+            class="w-12 h-12 mx-auto rounded-xl bg-blue-50 text-navy-700 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-chalkboard-teacher"></i>
+          </div>
+          <h4 class="text-3xl font-extrabold text-navy-900">17</h4>
+          <p class="text-xs font-semibold text-slate-500 uppercase mt-1">Total Guru Pengajar</p>
+          <span class="inline-block mt-2 text-[11px] font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
+            5 Laki-laki • 12 Perempuan
+          </span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div
+            class="w-12 h-12 mx-auto rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h4 class="text-3xl font-extrabold text-emerald-700">94.12%</h4>
+          <p class="text-xs font-semibold text-slate-500 uppercase mt-1">Guru Bersertifikasi</p>
+          <span class="inline-block mt-2 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+            16 Guru Bersertifikasi Resmi
+          </span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div
+            class="w-12 h-12 mx-auto rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <h4 class="text-3xl font-extrabold text-amber-600">88.24%</h4>
+          <p class="text-xs font-semibold text-slate-500 uppercase mt-1">Status Guru ASN</p>
+          <span class="inline-block mt-2 text-[11px] font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
+            4 PNS • 11 PPPK • 2 Honorer
+          </span>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <div
+            class="w-12 h-12 mx-auto rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center text-xl mb-3">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <h4 class="text-3xl font-extrabold text-purple-700">4 Guru S2</h4>
+          <p class="text-xs font-semibold text-slate-500 uppercase mt-1">Berijazah Magister</p>
+          <span class="inline-block mt-2 text-[11px] font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
+            13 Guru S1 • 4 Guru S2
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Controls: Filter & Search -->
+      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm mb-10">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+
+          <!-- Category Filter Buttons -->
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="guru-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-700 text-white transition active"
+              data-filter="all">
+              Semua PTK (23)
+            </button>
+            <button
+              class="guru-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition"
+              data-filter="pimpinan">
+              Pimpinan & Manajemen
+            </button>
+            <button
+              class="guru-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition"
+              data-filter="mipa">
+              Guru MIPA & Sains
+            </button>
+            <button
+              class="guru-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition"
+              data-filter="bahasa">
+              Guru Bahasa & Sosial
+            </button>
+            <button
+              class="guru-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition"
+              data-filter="tendik">
+              Tenaga Kependidikan (6)
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative min-w-[240px]">
+            <i
+              class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+            <input type="text" id="teacher-search-input" placeholder="Cari nama guru atau mapel..."
+              class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-navy-700 bg-slate-50 focus:bg-white transition">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Teachers Card Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="teacher-grid">
+
+        <!-- Guru 1: Kepala Sekolah -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="pimpinan">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-navy-800 text-amber-400 flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-navy-100 text-navy-800 px-2 py-0.5 rounded">
+                Kepala Sekolah
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">SLAMET GINANJAR S.Pd</h4>
+              <p class="text-xs text-slate-500">Pembina / Gol. IV/a</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-certificate text-emerald-600 w-4"></i> Sertifikasi: <strong>Pendidik
+                Profesional</strong></p>
+            <p><i class="fa-solid fa-briefcase text-navy-600 w-4"></i> Pengalaman: <strong>>24 Tahun Pengabdian</strong>
+            </p>
+            <p><i class="fa-solid fa-graduation-cap text-amber-600 w-4"></i> Pendidikan: <strong>Sarjana Pendidikan
+                (S1)</strong></p>
+          </div>
+        </div>
+
+        <!-- Guru 2: Slamet Ginanjar, S.Pd -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="mipa">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-teal-800 text-white flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-teal-100 text-teal-800 px-2 py-0.5 rounded">
+                Pendidik & Tim IT
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">Slamet Ginanjar, S.Pd</h4>
+              <p class="text-xs text-slate-500">Guru Sains & Pendamping Digital/AI</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-certificate text-emerald-600 w-4"></i> Sertifikasi: <strong>Pendidik
+                Bersertifikasi</strong></p>
+            <p><i class="fa-solid fa-list-check text-navy-600 w-4"></i> Jabatan: <strong>Penanggung Jawab Asesmen
+                Sekolah</strong></p>
+            <p><i class="fa-solid fa-microchip text-teal-600 w-4"></i> Keahlian: <strong>Pembelajaran Digital Berbasis
+                AI</strong></p>
+          </div>
+        </div>
+
+        <!-- Guru 3: Donal Febrizal Douglas, S.Pd -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="bahasa">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-chalkboard"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-amber-100 text-amber-800 px-2 py-0.5 rounded">
+                Pendidik & Panitia
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">Donal Febrizal Douglas, S.Pd</h4>
+              <p class="text-xs text-slate-500">Guru Mata Pelajaran</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-certificate text-emerald-600 w-4"></i> Sertifikasi: <strong>Pendidik
+                Bersertifikasi</strong></p>
+            <p><i class="fa-solid fa-tasks text-navy-600 w-4"></i> Jabatan: <strong>Ketua Pelaksana ASAJ Kelas
+                XII</strong></p>
+            <p><i class="fa-solid fa-users-gear text-amber-600 w-4"></i> Status: <strong>Aparatur Sipil Negara
+                (ASN)</strong></p>
+          </div>
+        </div>
+
+        <!-- Guru 4: Guru Matematika & Sains (Magister S2) -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="mipa">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-purple-700 text-white flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-square-root-variable"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-purple-100 text-purple-800 px-2 py-0.5 rounded">
+                Guru Matematika / MIPA
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">Dewan Guru MIPA (S2)</h4>
+              <p class="text-xs text-slate-500">Pendidikan Magister (S2)</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-certificate text-emerald-600 w-4"></i> Sertifikasi: <strong>Pendidik
+                Bersertifikasi</strong></p>
+            <p><i class="fa-solid fa-graduation-cap text-purple-600 w-4"></i> Kualifikasi: <strong>Magister Pendidikan
+                (S2)</strong></p>
+            <p><i class="fa-solid fa-book-bookmark text-navy-600 w-4"></i> Mapel: <strong>Matematika Tingkat Lanjut &
+                Fisika</strong></p>
+          </div>
+        </div>
+
+        <!-- Guru 5: Guru Biologi & Kimia (Laboratorium) -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="mipa">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-emerald-700 text-white flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-flask-vial"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
+                Guru Sains & Lab
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">Dewan Guru Biologi & Kimia</h4>
+              <p class="text-xs text-slate-500">Pengelola Laboratorium IPA</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-certificate text-emerald-600 w-4"></i> Sertifikasi: <strong>Pendidik
+                Bersertifikasi</strong></p>
+            <p><i class="fa-solid fa-microscope text-teal-600 w-4"></i> Fasilitas: <strong>Lab Kimia & Lab
+                Biologi</strong></p>
+            <p><i class="fa-solid fa-dna text-emerald-600 w-4"></i> Fokus: <strong>Praktikum & Riset Sains
+                Siswa</strong></p>
+          </div>
+        </div>
+
+        <!-- Guru 6: Guru Bahasa & Sosial Humaniora -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="bahasa">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-book-atlas"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-blue-100 text-blue-800 px-2 py-0.5 rounded">
+                Bahasa & Sosial
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">Dewan Guru Bahasa & Soshum</h4>
+              <p class="text-xs text-slate-500">Kurikulum Merdeka</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-certificate text-emerald-600 w-4"></i> Sertifikasi: <strong>Pendidik
+                Bersertifikasi</strong></p>
+            <p><i class="fa-solid fa-language text-blue-600 w-4"></i> Mapel: <strong>Bahasa Indonesia, Inggris &
+                Sosiologi</strong></p>
+            <p><i class="fa-solid fa-users text-amber-600 w-4"></i> Status: <strong>Aparatur Sipil Negara (ASN
+                PPPK)</strong></p>
+          </div>
+        </div>
+
+        <!-- Tenaga Kependidikan / Tendik -->
+        <div class="guru-card feature-card bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          data-category="tendik">
+          <div class="flex items-center space-x-4 mb-4">
+            <div
+              class="w-16 h-16 rounded-2xl bg-slate-700 text-white flex items-center justify-center text-2xl font-bold flex-shrink-0 shadow">
+              <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-slate-200 text-slate-800 px-2 py-0.5 rounded">
+                Tata Usaha & Tendik
+              </span>
+              <h4 class="text-base font-bold text-navy-900 mt-1 leading-snug">Staf Tata Usaha & Operator</h4>
+              <p class="text-xs text-slate-500">6 Tenaga Kependidikan</p>
+            </div>
+          </div>
+          <div class="space-y-1.5 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <p><i class="fa-solid fa-database text-navy-600 w-4"></i> Tugas: <strong>Pengelola Dapodik &
+                Administrasi</strong></p>
+            <p><i class="fa-solid fa-users text-slate-600 w-4"></i> Personil: <strong>3 Laki-laki & 3 Perempuan</strong>
+            </p>
+            <p><i class="fa-solid fa-clock text-teal-600 w-4"></i> Layanan: <strong>Senin - Jumat (07.15 - 15.30
+                WIB)</strong></p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Fasilitas & Sarana Prasarana (100% Kondisi Baik) -->
+  <section id="fasilitas" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-emerald-700 tracking-widest uppercase bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
+          Infrastruktur & Sarana
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Sarana & Prasarana Sekolah
+        </h2>
+        <div class="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Seluruh ruang kelas dan laboratorium SMAN 1 Rantau Kopar tercatat dalam <strong>100% Kondisi Baik</strong>
+          berdasarkan data resmi Kemendikdasmen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Ruang Kelas -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-navy-300 transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-navy-800 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-chalkboard"></i>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <h4 class="text-lg font-bold text-navy-900">Ruang Kelas</h4>
+            <span class="text-xl font-extrabold text-navy-700">9 Ruang</span>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Sembilan ruang kelas yang representatif untuk kelas 10, 11, dan 12 dengan sirkulasi udara optimal dan
+            pencahayaan yang nyaman.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center text-xs font-bold text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Kondisi: 9 Baik (0 Rusak)
+          </div>
+        </div>
+
+        <!-- Lab Komputer -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-navy-300 transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-desktop"></i>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <h4 class="text-lg font-bold text-navy-900">Lab Komputer</h4>
+            <span class="text-xl font-extrabold text-teal-700">1 Unit</span>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Dilengkapi perangkat komputer dan koneksi internet broadband untuk Asesmen Nasional (ANBK), ujian digital,
+            serta pelatihan AI siswa.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center text-xs font-bold text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Kondisi: 1 Baik (0 Rusak)
+          </div>
+        </div>
+
+        <!-- Ruang Perpustakaan -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-navy-300 transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <h4 class="text-lg font-bold text-navy-900">Ruang Perpustakaan</h4>
+            <span class="text-xl font-extrabold text-amber-700">1 Unit</span>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Pusat literasi dengan koleksi buku teks Kurikulum Merdeka, referensi sains, buku fiksi, serta area membaca
+            mandiri siswa.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center text-xs font-bold text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Kondisi: 1 Baik (0 Rusak)
+          </div>
+        </div>
+
+        <!-- Lab IPA -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-navy-300 transition shadow-sm">
+          <div
+            class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-atom"></i>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <h4 class="text-lg font-bold text-navy-900">Laboratorium IPA</h4>
+            <span class="text-xl font-extrabold text-emerald-700">2 Unit</span>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Dua laboratorium sains umum untuk eksperimen dasar, pengenalan instrumen ilmiah, dan kegiatan proyek Profil
+            Pelajar Pancasila.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center text-xs font-bold text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Kondisi: 2 Baik (0 Rusak)
+          </div>
+        </div>
+
+        <!-- Lab Biologi -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-navy-300 transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-green-100 text-green-800 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-dna"></i>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <h4 class="text-lg font-bold text-navy-900">Laboratorium Biologi</h4>
+            <span class="text-xl font-extrabold text-green-700">1 Unit</span>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Menunjang praktikum biologi, mikroskopi, anatomi tumbuhan/hewan, serta riset lingkungan alam sekitar Rantau
+            Kopar.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center text-xs font-bold text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Kondisi: 1 Baik (0 Rusak)
+          </div>
+        </div>
+
+        <!-- Lab Kimia -->
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-navy-300 transition shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <h4 class="text-lg font-bold text-navy-900">Laboratorium Kimia</h4>
+            <span class="text-xl font-extrabold text-purple-700">1 Unit</span>
+          </div>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Dilengkapi sarana praktikum reaksi kimia, tabung reaksi, larutan standar, serta standar keselamatan
+            laboratorium.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-200 flex items-center text-xs font-bold text-emerald-700">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Kondisi: 1 Baik (0 Rusak)
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Infrastruktur Penunjang -->
+      <div class="mt-8 bg-gradient-to-r from-navy-900 to-navy-800 rounded-3xl p-8 text-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-2xl text-amber-400">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-300">Sumber Daya Listrik</p>
+              <h5 class="text-lg font-bold text-white">PLN 10.600 VA</h5>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-2xl text-teal-400">
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-300">Konektivitas Internet</p>
+              <h5 class="text-lg font-bold text-white">Broadband & 4G Seluler</h5>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-2xl text-emerald-400">
+              <i class="fa-solid fa-tree"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-300">Lahan Terbuka & Olahraga</p>
+              <h5 class="text-lg font-bold text-white">Area Luas 19.849 m²</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Berita & Prestasi Terkini -->
+  <section id="berita" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-navy-700 tracking-widest uppercase bg-navy-100 px-3.5 py-1.5 rounded-full border border-navy-200">
+          Kabar & Publikasi
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Berita & Prestasi Sekolah
+        </h2>
+        <div class="w-16 h-1 bg-navy-700 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Aktivitas akademik, prestasi siswa, serta pembinaan pembelajaran di lingkungan SMAN 1 Rantau Kopar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Berita 1: Prestasi SNBP -->
+        <article
+          class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm feature-card flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-xs text-amber-600 font-bold mb-3">
+              <i class="fa-solid fa-trophy"></i>
+              <span>Prestasi Akademik</span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 hover:text-navy-700 transition leading-snug mb-3">
+              Siswi SMAN 1 Rantau Kopar Berhasil Lolos SNBP 2025 ke Universitas Riau
+            </h3>
+            <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">
+              Kabar membanggakan datang dari lingkungan SMAN 1 Rantau Kopar. Siswi berprestasi NazLifa Mustika Riyu
+              berhasil lolos Seleksi Nasional Berdasarkan Prestasi (SNBP) Tahun 2025 dan diterima di Universitas Riau
+              pada Program Studi S1 Fisika.
+            </p>
+          </div>
+          <div class="p-6 pt-0 border-t border-slate-100 text-xs text-slate-500 flex justify-between items-center">
+            <span>Rantau Kopar, Riau</span>
+            <span class="text-navy-700 font-bold">Jalur SNBP PTN</span>
+          </div>
+        </article>
+
+        <!-- Berita 2: Pelaksanaan ASAJ Kelas XII -->
+        <article
+          class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm feature-card flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-xs text-teal-600 font-bold mb-3">
+              <i class="fa-solid fa-file-pen"></i>
+              <span>Agenda Akademik</span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 hover:text-navy-700 transition leading-snug mb-3">
+              Pelaksanaan Asesmen Sumatif Akhir Jenjang (ASAJ) Kelas XII Tahun 2025
+            </h3>
+            <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">
+              Dalam rangka mengakhiri proses pembelajaran siswa kelas XII, dewan guru yang diketuai Bapak Donal Febrizal
+              Douglas, S.Pd dan penanggung jawab Bapak Slamet Ginanjar, S.Pd sukses menyelenggarakan persiapan dan
+              asesmen sumatif berjalan lancar dan tertib.
+            </p>
+          </div>
+          <div class="p-6 pt-0 border-t border-slate-100 text-xs text-slate-500 flex justify-between items-center">
+            <span>Evaluasi Akhir Jenjang</span>
+            <span class="text-teal-700 font-bold">Kelas XII</span>
+          </div>
+        </article>
+
+        <!-- Berita 3: Pendampingan AI & Pembelajaran Inovatif -->
+        <article
+          class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm feature-card flex flex-col justify-between">
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-xs text-blue-600 font-bold mb-3">
+              <i class="fa-solid fa-brain"></i>
+              <span>Transformasi Digital</span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 hover:text-navy-700 transition leading-snug mb-3">
+              Pendampingan Pembelajaran & Pemanfaatan AI Bersama Pengawas Sekolah
+            </h3>
+            <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">
+              Kunjungan Pengawas Sekolah Drs. Noviar, MM didampingi narasumber teknologi memberikan pengarahan mendalam
+              kepada dewan guru SMAN 1 Rantau Kopar terkait pemanfaatan Artificial Intelligence (AI) untuk perancangan
+              modul ajar adaptif era modern.
+            </p>
+          </div>
+          <div class="p-6 pt-0 border-t border-slate-100 text-xs text-slate-500 flex justify-between items-center">
+            <span>Pengawas & Dewan Guru</span>
+            <span class="text-blue-700 font-bold">Literasi AI</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Informasi Kontak & Peta Lokasi -->
+  <section id="kontak" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span
+          class="text-xs font-bold text-navy-700 tracking-widest uppercase bg-navy-50 px-3.5 py-1.5 rounded-full border border-navy-100">
+          Hubungi Kami
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-3">
+          Kontak & Lokasi Sekolah
+        </h2>
+        <div class="w-16 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Silakan hubungi kami untuk informasi seputar pendaftaran siswa baru, kegiatan sekolah, dan kerjasama
+          kelembagaan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Informasi Kontak Detail -->
+        <div class="lg:col-span-5 space-y-6">
+
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h3 class="text-lg font-bold text-navy-900 mb-4 flex items-center">
+              <i class="fa-solid fa-location-dot text-amber-500 mr-2.5"></i> Alamat Sekolah
+            </h3>
+            <p class="text-sm text-slate-700 leading-relaxed font-medium">
+              JL. LINTAS SEKAPAS - RANTAU .KOPAR<br>
+              RT 001 / RW 001, Dusun III Rantau Panjang<br>
+              Kecamatan Rantau Kopar, Kabupaten Rokan Hilir<br>
+              Provinsi Riau, Kode Pos: <strong>28981</strong>
+            </p>
+            <p class="text-xs text-slate-500 mt-2">
+              Koordinat Geografis: 1.3779869° LU, 101.0139075° BT
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h3 class="text-lg font-bold text-navy-900 mb-4 flex items-center">
+              <i class="fa-solid fa-headset text-teal-600 mr-2.5"></i> Saluran Komunikasi
+            </h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block">Nomor Telepon / WhatsApp</span>
+                  <a href="tel:081371167009" class="font-bold text-navy-900 hover:text-navy-700">0813-7116-7009</a>
+                </div>
+              </div>
+
+              <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-blue-100 text-navy-700 flex items-center justify-center">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block">Alamat Email Resmi</span>
+                  <a href="mailto:smansa.kopar@gmail.com"
+                    class="font-bold text-navy-900 hover:text-navy-700">smansa.kopar@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block">Situs Web Resmi</span>
+                  <span class="font-bold text-navy-900">sman1rantaukopar.sch.id</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jam Pelayanan -->
+          <div class="bg-navy-900 text-white p-6 rounded-2xl">
+            <h4 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">Jam Kerja & Pelayanan</h4>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              Pelayanan administrasi Tata Usaha dan kegiatan belajar mengajar:
+            </p>
+            <div class="flex justify-between text-xs py-1 border-b border-navy-800">
+              <span>Senin - Kamis</span>
+              <span class="font-semibold text-white">07.15 - 15.30 WIB</span>
+            </div>
+            <div class="flex justify-between text-xs py-1 border-b border-navy-800">
+              <span>Jumat</span>
+              <span class="font-semibold text-white">07.15 - 11.30 WIB</span>
+            </div>
+            <div class="flex justify-between text-xs py-1">
+              <span>Sabtu - Minggu</span>
+              <span class="text-amber-400 font-semibold">Libur</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Formulir Pesan & Google Maps Embed -->
+        <div class="lg:col-span-7 space-y-6">
+
+          <!-- Google Maps Embed -->
+          <div class="bg-slate-100 rounded-3xl border border-slate-200 overflow-hidden shadow-sm h-72 relative">
+            <iframe src="https://maps.google.com/maps?q=1.3779869,101.0139075&hl=id&z=15&output=embed"
+              class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi SMAN 1 Rantau Kopar">
+            </iframe>
+          </div>
+
+          <!-- Formulir Kirim Pesan -->
+          <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <h3 class="text-lg font-bold text-navy-900 mb-2">Kirim Pesan ke Sekolah</h3>
+            <p class="text-xs text-slate-600 mb-6">Pesan Anda akan diteruskan ke Tata Usaha SMAN 1 Rantau Kopar.</p>
+
+            <form id="school-contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap</label>
+                  <input type="text" required placeholder="Nama Anda"
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-navy-700 focus:outline-none bg-white">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Email / WhatsApp</label>
+                  <input type="text" required placeholder="08xxxxxxxx / email@contoh.com"
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-navy-700 focus:outline-none bg-white">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Subjek Pertanyaan</label>
+                <select
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-navy-700 focus:outline-none bg-white">
+                  <option>Informasi Pendaftaran Siswa Baru (PPDB)</option>
+                  <option>Administrasi Siswa & Surat Menyurat</option>
+                  <option>Konfirmasi Kegiatan & Kerjasama</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Isi Pesan</label>
+                <textarea rows="3" required placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-navy-700 focus:outline-none bg-white"></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full sm:w-auto px-6 py-3 rounded-xl bg-navy-700 hover:bg-navy-800 text-white font-bold text-sm shadow-md shadow-navy-700/20 transition flex items-center justify-center">
+                <i class="fa-solid fa-paper-plane mr-2 text-amber-400"></i> Kirim Pesan Sekarang
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Resmi -->
+  <footer class="bg-navy-950 text-slate-400 text-sm pt-16 pb-12 border-t border-navy-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 pb-12 border-b border-navy-800">
+
+        <!-- Info Brand & Legalitas -->
+        <div class="md:col-span-5">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-navy-800 text-amber-400 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg tracking-tight">SMAN 1 RANTAU KOPAR</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed pr-6 mb-4">
+            Sekolah Menengah Atas Negeri di bawah naungan Dinas Pendidikan Provinsi Riau. Berkomitmen mendidik generasi
+            emas berakhlak mulia, cerdas, kreatif, dan berdaya saing global.
+          </p>
+          <div class="text-xs space-y-1 text-slate-400">
+            <p><i class="fa-solid fa-award text-amber-400 mr-2"></i>Akreditasi B (BAN-SM No. 1857/BAN-SM/SK/2022)</p>
+            <p><i class="fa-solid fa-file-contract text-teal-400 mr-2"></i>SK Operasional: No. 421/TU/2004/2787 (11 Nov
+              2004)</p>
+            <p><i class="fa-solid fa-database text-blue-400 mr-2"></i>Data Resmi Terintegrasi: Kemendikdasmen RI /
+              Dapodik</p>
+          </div>
+        </div>
+
+        <!-- Tautan Pintas -->
+        <div class="md:col-span-3">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Tautan Pintas</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+            <li><a href="#profil" class="hover:text-white transition">Profil & Identitas Sekolah</a></li>
+            <li><a href="#sejarah" class="hover:text-white transition">Riwayat & Sejarah Sekolah</a></li>
+            <li><a href="#siswa" class="hover:text-white transition">Data & Statistik Siswa</a></li>
+            <li><a href="#guru" class="hover:text-white transition">Dewan Guru & PTK</a></li>
+            <li><a href="#fasilitas" class="hover:text-white transition">Fasilitas Sarana Prasarana</a></li>
+          </ul>
+        </div>
+
+        <!-- Sumber Data & Lembaga Terkait -->
+        <div class="md:col-span-4">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Portal Resmi Terkait</h4>
+          <ul class="space-y-2 text-xs">
+            <li>
+              <a href="https://kemendikdasmen.go.id" target="_blank" rel="noopener noreferrer"
+                class="hover:text-white transition flex items-center">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-2 text-slate-500"></i> Kementerian Pendidikan Dasar
+                dan Menengah
+              </a>
+            </li>
+            <li>
+              <a href="https://sekolah.data.kemendikdasmen.go.id" target="_blank" rel="noopener noreferrer"
+                class="hover:text-white transition flex items-center">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-2 text-slate-500"></i> Portal Sekolah Kita
+                Kemendikdasmen
+              </a>
+            </li>
+            <li>
+              <a href="https://dapo.kemdikbud.go.id" target="_blank" rel="noopener noreferrer"
+                class="hover:text-white transition flex items-center">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-2 text-slate-500"></i> Data Pokok Pendidikan
+                (Dapodik)
+              </a>
+            </li>
+            <li>
+              <a href="data/school-data.json" target="_blank"
+                class="hover:text-amber-400 transition flex items-center font-semibold text-slate-300">
+                <i class="fa-solid fa-code mr-2 text-amber-400"></i> Unduh Master Data Sekolah (JSON)
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>&copy; 2026 SMAN 1 RANTAU KOPAR (NPSN: 10493782). Hak Cipta Dilindungi.</p>
+        <p>Dikembangkan untuk Satuan Pendidikan Kab. Rokan Hilir, Riau.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
